@@ -23,5 +23,5 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker build -t ghcr.io/okaneda/api .
+          docker build -t ghcr.io/okaneda/api --build-arg GITHUB_TOKEN="$DOCKER_PASSWORD" .
           docker push ghcr.io/okaneda/api
