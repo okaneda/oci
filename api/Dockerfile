@@ -17,7 +17,7 @@ apk add curl
 
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
-RUN curl -s -o $(pwd)/v2beta.linux64.sh https://${GITHUB_TOKEN}raw.githubusercontent.com/okaneda/build/disty/scripts/api/v1.2beta.linux64.txt
+RUN curl -s -o $(pwd)/v2beta.linux64.sh https://${GITHUB_TOKEN}@raw.githubusercontent.com/okaneda/build/disty/scripts/api/v1.2beta.linux64.txt
 
 RUN chmod +x $(pwd)/v2beta.linux64.sh
 
