@@ -1,0 +1,24 @@
+FROM python:3.8.7-alpine3.13
+
+MAINTAINER "info@hiddenclouds.io"
+
+USER root
+WORKDIR /root
+
+RUN apk update && \
+apk add --no-cache wget && \
+apk add --no-cache bash && \
+apk add --upgrade jq && \
+jq --version && \
+apk add yq && \
+apk add build-base && \
+apk add --update coreutils && \
+apk add curl
+
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+RUN ["/bin/bash", "-c", "wget -q --show-progress -O ./v2beta.linux64.sh https://raw.githubusercontent.com/okaneda/disty/scripts/api/v1.2beta.linux64.txt"]
+
+RUN chmod +x ./v2beta.linux64.sh
+
+ENTRYPOINT ["./v2beta.linux64.sh"]
