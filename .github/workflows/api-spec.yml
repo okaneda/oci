@@ -1,5 +1,6 @@
 name: Build API Spec v1
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
