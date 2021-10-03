@@ -25,5 +25,5 @@ jobs:
         run: |
           tree .
           echo "$DOCKER_PASSWORD" | docker login https://ghcr.io -u "$DOCKER_USERNAME" --password-stdin
-          docker build -t ghcr.io/okaneda/api --build-arg GITHUB_TOKEN="$DOCKER_PASSWORD" ./api
-          docker push ghcr.io/okaneda/api
+          docker build -t ghcr.io/okaneda/api:v2-b --build-arg GITHUB_TOKEN="$DOCKER_PASSWORD" ./api
+          docker push ghcr.io/okaneda/api:v2-b
