@@ -1,10 +1,16 @@
 name: Test API Spec v2beta
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Build API Spec v2beta"]
+    types:
+      - completed
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: |
+      github.event_name == 'workflow_dispatch'  
+      || github.event.workflow_run.conclusion == 'success'
     env:
       AGENT_REV: "temp"
     steps:
