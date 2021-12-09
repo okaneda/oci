@@ -1,4 +1,4 @@
-name: Build API Spec v2beta
+name: Test API Spec v2beta
 on:
   workflow_dispatch:
 jobs:
