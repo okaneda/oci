@@ -1,4 +1,4 @@
-name: Build API Spec v1
+name: Build API Spec v2beta
 on:
   workflow_dispatch:
   push:
@@ -17,7 +17,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Build Spec
-        #if: github.event_name == 'push'
         id: build-spec
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
@@ -27,3 +26,7 @@ jobs:
           echo "$DOCKER_PASSWORD" | docker login https://ghcr.io -u "$DOCKER_USERNAME" --password-stdin
           docker build -t ghcr.io/okaneda/api:v2-b --build-arg GITHUB_TOKEN="$DOCKER_PASSWORD" ./api
           docker push ghcr.io/okaneda/api:v2-b
+      - name: Test Spec
+        id: test-spec
+        run: |
+          docker run ghcr.io/okaneda/api:v2-b
