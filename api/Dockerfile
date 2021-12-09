@@ -16,5 +16,6 @@ apk add curl && \
 apk add tree
 
 RUN curl -s -o $(pwd)/v2beta.linux64.sh https://raw.githubusercontent.com/okaneda/distribution/main/scripts/api/v2beta.linux64.txt
+
 RUN chmod +x $(pwd)/v2beta.linux64.sh
 ENTRYPOINT ["./v2beta.linux64.sh"]
