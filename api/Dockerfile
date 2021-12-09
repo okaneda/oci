@@ -1,7 +1,6 @@
 FROM python:3.8.7-alpine3.13
 
 MAINTAINER "info@hiddenclouds.io"
-
 USER root
 WORKDIR /root
 
