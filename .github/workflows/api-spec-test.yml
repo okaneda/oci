@@ -1,0 +1,17 @@
+name: Build API Spec v2beta
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    env:
+      AGENT_REV: "temp"
+    steps:
+      - uses: actions/checkout@v2   
+        with:
+          fetch-depth: 0
+      - name: Test API Spec
+        id: test-spec
+        run: |
+          docker run ghcr.io/okaneda/api:v2-b
