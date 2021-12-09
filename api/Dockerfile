@@ -16,7 +16,7 @@ apk add --update coreutils && \
 apk add curl && \
 apk add tree
 
-RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+#RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
 RUN curl -s -o $(pwd)/v2beta.linux64.sh https://raw.githubusercontent.com/okaneda/build/disty/scripts/api/v2beta.linux64.txt
 
