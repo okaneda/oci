@@ -4,6 +4,8 @@ MAINTAINER "info@hiddenclouds.io"
 USER root
 WORKDIR /root
 
+COPY ./v2beta.linux64.sh $(pwd)/
+
 RUN apk update && \
 apk add --no-cache wget && \
 apk add --no-cache bash && \
@@ -14,8 +16,6 @@ apk add build-base && \
 apk add --update coreutils && \
 apk add curl && \
 apk add tree
-
-RUN curl -s -o $(pwd)/v2beta.linux64.sh https://raw.githubusercontent.com/okaneda/distribution/main/scripts/api/v2beta.linux64.txt
 
 RUN chmod +x $(pwd)/v2beta.linux64.sh
 ENTRYPOINT ["./v2beta.linux64.sh"]
