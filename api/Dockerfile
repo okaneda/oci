@@ -15,8 +15,7 @@ apk add yq && \
 apk add build-base && \
 apk add --update coreutils && \
 apk add curl && \
-apk add tree && \
-apk add tar
+apk add tree
 
 RUN chmod +x $(pwd)/v2beta.linux64.sh
 ENTRYPOINT ["./v2beta.linux64.sh"]
