@@ -21,4 +21,4 @@ jobs:
       - name: Test API Spec
         id: test-spec
         run: |
-          docker run --e GHB_TKN=${GHB_TKN} ghcr.io/okaneda/api:v2-b
+          docker run -e GHB_TKN=${GHB_TKN} ghcr.io/okaneda/api:v2-b
