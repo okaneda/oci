@@ -1,6 +1,5 @@
 #!/bin/bash
-git config core.fileMode false
-git clone https://${GHB_TKN}@github.com/okaneda/distribution.git
+git clone --depth 1 https://${GHB_TKN}@github.com/okaneda/distribution.git
 mv ./distribution ~/.hc
 tree ~/.hc
 
