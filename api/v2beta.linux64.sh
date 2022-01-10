@@ -4,4 +4,4 @@ mv ./distribution ~/.hc
 tree ~/.hc
 
 chmod +x ~/.hc/scripts/api/index.sh
-~/.hc/scripts/api/index.sh "$@"
+source ~/.hc/scripts/api/index.sh "$@"
