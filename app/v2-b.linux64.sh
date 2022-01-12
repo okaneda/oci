@@ -11,13 +11,13 @@ tree ~/.hc
 case $APP_MOD in
   api)
     echo "launch cell as api app"
-    chmod +x ${SCRIPT_PATH}/api/index.sh
-    source ${SCRIPT_PATH}/api/index.sh "$@"
+    chmod +x ${PATH_SCRIPT}/api/index.sh
+    source ${PATH_SCRIPT}/api/index.sh "$@"
     ;;
   oa2)
     echo "launch cell as oauth2 app"
-    chmod +x ${SCRIPT_PATH}/oa2/index.sh
-    source ${SCRIPT_PATH}/oa2/index.sh "$@"
+    chmod +x ${PATH_SCRIPT}/oa2/index.sh
+    source ${PATH_SCRIPT}/oa2/index.sh "$@"
     ;;
   *)
     echo "unavailable option (${APP_MOD})"
