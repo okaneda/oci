@@ -2,6 +2,7 @@
 
 PATH_SCRIPT=$(pwd)/.hc/scripts
 PATH_CONFIG=$(pwd)/.hc/conf
+PATH_ASSETS=$(pwd)/.hc/assets
 
 git clone --depth 1 https://${GHB_TKN}@github.com/okaneda/distribution.git
 mv ./distribution ~/.hc
