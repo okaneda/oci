@@ -2,7 +2,7 @@ name: Test API v2-b
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Build App Spec v2beta"]
+    workflows: ["Build App Spec v2-b"]
     types:
       - completed
 jobs:
