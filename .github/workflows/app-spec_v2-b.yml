@@ -1,4 +1,4 @@
-name: Build App Spec v2beta
+name: Build App Spec v2-b
 on:
   workflow_dispatch:
   push:
