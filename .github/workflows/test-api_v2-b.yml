@@ -1,8 +1,8 @@
-name: Test API Spec v2beta
+name: Test API v2-b
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Build API Spec v2beta"]
+    workflows: ["Build App Spec v2beta"]
     types:
       - completed
 jobs:
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2   
         with:
           fetch-depth: 0
-      - name: Test API Spec
-        id: test-spec
+      - name: Test API
+        id: test-api
         run: |
-          docker run -e GHB_TKN=${GHB_TKN} ghcr.io/okaneda/api:v2-b
+          docker run -e GHB_TKN=${GHB_TKN} -e APP_MOD=api ghcr.io/okaneda/app:v2-b
