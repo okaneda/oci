@@ -1,10 +1,10 @@
-name: Build Cell Spec v2beta
+name: Build App Spec v2beta
 on:
   workflow_dispatch:
   push:
     branches: [ main ]
     paths:
-      - 'cell/Dockerfile'
+      - 'app/Dockerfile'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,5 +24,5 @@ jobs:
         run: |
           tree .
           echo "$DOCKER_PASSWORD" | docker login https://ghcr.io -u "$DOCKER_USERNAME" --password-stdin
-          docker build -t ghcr.io/okaneda/cell:v2-b --build-arg GITHUB_TOKEN="$DOCKER_PASSWORD" ./cell
-          docker push ghcr.io/okaneda/cell:v2-b
+          docker build -t ghcr.io/okaneda/app:v2-b --build-arg GITHUB_TOKEN="$DOCKER_PASSWORD" ./app
+          docker push ghcr.io/okaneda/app:v2-b
