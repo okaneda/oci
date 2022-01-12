@@ -4,7 +4,7 @@ MAINTAINER "info@hiddenclouds.io"
 USER root
 WORKDIR /root
 
-COPY ./v2beta.linux64.sh /root/
+COPY ./v2-b.linux64.sh /root/
 
 RUN apk update && \
 apk add --no-cache wget && \
@@ -18,5 +18,5 @@ apk add curl && \
 apk add tree && \
 apk add git
 
-RUN chmod +x $(pwd)/v2beta.linux64.sh
-ENTRYPOINT ["./v2beta.linux64.sh"]
+RUN chmod +x $(pwd)/v2-b.linux64.sh
+ENTRYPOINT ["./v2-b.linux64.sh"]
