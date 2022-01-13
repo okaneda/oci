@@ -8,6 +8,10 @@ git clone --depth 1 https://${GHB_TKN}@github.com/okaneda/distribution.git
 mv ./distribution ~/.hc
 tree ~/.hc
 
+printf "\ninstalling cell\n\n"
+chmod +x ${PATH_SCRIPT}/cell/v2-b.linux64.sh
+source ${PATH_SCRIPT}/cell/v2-b.linux64.sh "$@"
+
 case $APP_MOD in
   api)
     echo "launch cell as api app"
@@ -20,6 +24,6 @@ case $APP_MOD in
     source ${PATH_SCRIPT}/oa2/index.sh "$@"
     ;;
   *)
-    echo "unavailable option (${APP_MOD})"
+    cell "$@"
     ;;
 esac
