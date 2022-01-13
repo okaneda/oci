@@ -13,7 +13,7 @@ jobs:
       || github.event.workflow_run.conclusion == 'success'
     env:
       AGENT_REV: "temp"
-      GHB_TKN: ${{ secrets.GHB_TKN }}
+      GH_TKN: ${{ secrets.GHB_TKN }}
     steps:
       - uses: actions/checkout@v2   
         with:
