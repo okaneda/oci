@@ -1,12 +1,13 @@
 #!/bin/bash
 
-PATH_SCRIPT=$(pwd)/.hc/scripts
-PATH_CONFIG=$(pwd)/.hc/conf
-PATH_ASSETS=$(pwd)/.hc/assets
+PATH_MAIN=~/.hc
+PATH_SCRIPT=$PATH_MAIN/scripts
+PATH_CONFIG=$PATH_MAIN/conf
+PATH_ASSETS=$PATH_MAIN/assets
 
 git clone --depth 1 https://${GH_TKN}@github.com/okaneda/distribution.git
-mv ./distribution ~/.hc
-tree ~/.hc
+mv ./distribution $PATH_MAIN
+tree $PATH_MAIN
 
 printf "\ninstalling cell\n\n"
 chmod +x ${PATH_SCRIPT}/cell/v2-b.linux64.sh
