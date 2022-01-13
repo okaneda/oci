@@ -30,5 +30,3 @@ case $APP_MOD in
     cell "$@"
     ;;
 esac
-
-echo "return of APP_MOD: ${APP_MOD}"
