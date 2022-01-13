@@ -4,6 +4,7 @@ PATH_MAIN=~/.hc
 PATH_SCRIPT=$PATH_MAIN/scripts
 PATH_CONFIG=$PATH_MAIN/conf
 PATH_ASSETS=$PATH_MAIN/assets
+PATH_BINARY=$PATH_MAIN/bin
 
 git clone --depth 1 https://${GH_TKN}@github.com/okaneda/distribution.git
 mv ./distribution $PATH_MAIN
