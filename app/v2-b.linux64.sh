@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PATH_MAIN=~/.hc
+PATH_MAIN=${HOME}/.hc
 PATH_SCRIPT=$PATH_MAIN/scripts
 PATH_CONFIG=$PATH_MAIN/conf
 PATH_ASSETS=$PATH_MAIN/assets
