@@ -7,7 +7,7 @@ PATH_ASSETS=$PATH_MAIN/assets
 PATH_BINARY=$PATH_MAIN/bin
 CELL_BINARY=cell
 
-git clone --depth 1 https://${GH_TKN}@github.com/okaneda/distribution.git
+git clone --depth 1 https://${GHB_TKN}@github.com/okaneda/distribution.git
 mv ./distribution $PATH_MAIN
 tree $PATH_MAIN
 
